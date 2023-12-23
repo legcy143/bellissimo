@@ -1,18 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ButtonUi from '../../lib/ui/ButtonUi'
+import TextUi from '../../lib/ui/TextUi'
 
 const SplashScreen = ({ navigation }: any) => {
     return (
-        <View>
-            <ButtonUi label='home' onPress={() => {
-                navigation.navigate("BottomNavigation")
-            }} />
-            <Text>SplashScreen</Text>
+        <View style={[styles.container]}>
+            <Image
+                style={{
+                    width: 150,
+                    height: 150,
+                    objectFit: "contain"
+                }}
+                source={require('../../assets/logo_big.png')}
+            />
+            <TextUi mode='p1'>Bellissimo</TextUi>
         </View>
     )
 }
 
 export default SplashScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "white",
+        flex: 1
+    }
+})
