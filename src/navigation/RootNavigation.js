@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from '../screens/starter/SplashScreen';
+import { BottomNavigation } from './BottomNavigation';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ export function RootNavigation() {
             }}
         >
             <Stack.Screen name="Splash" component={SplashScreen} />
+            <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
         </Stack.Navigator>
     );
 }
