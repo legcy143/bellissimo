@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TextStyle, View } from 'react-native'
 import React from 'react'
-import { useTheme } from 'react-native-paper';
 
 interface TextUiProps {
   mode?: 'default' | 'h1' | 'h2' | 'p1' | 'p2' | 'sm1' | 'sm2';

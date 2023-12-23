@@ -1,6 +1,5 @@
 import React from 'react';
 import { TouchableOpacity, Text, ViewStyle, TextStyle, StyleSheet } from 'react-native';
-import { useTheme } from 'react-native-paper';
 
 interface ButtonUiProps {
   label: string;
@@ -11,7 +10,6 @@ interface ButtonUiProps {
 }
 
 const ButtonUi: React.FC<ButtonUiProps> = ({ label, mode = 'contained', ButtonStyle, textStyle, ...props }) => {
-  const { primary, secondry , primaryText , secondryText}: any = useTheme()
   const containerStyles: ViewStyle[] = [styles.button, modes[mode]?.container, ButtonStyle];
   const textStyles: TextStyle[] = [styles.text, modes[mode]?.text, textStyle];
 
