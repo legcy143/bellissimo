@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, ViewStyle, TextStyle, StyleSheet } from 'react-native';
+import { theme } from '../../contants/Theme';
 
 interface ButtonUiProps {
   label: string;
@@ -22,20 +23,20 @@ const ButtonUi: React.FC<ButtonUiProps> = ({ label, mode = 'contained', ButtonSt
 
 const modes = {
   contained: {
-    container: { backgroundColor: '#2196F3' },
-    text: { color: '#FFFFFF' },
+    container: { backgroundColor: theme.primaryBg },
+    text: { color: theme.primaryText },
   },
   outlined: {
-    container: { borderWidth: 1, borderColor: '#2196F3' },
-    text: { color: '#2196F3' },
+    container: { borderWidth: 1, borderColor: theme.primaryBg },
+    text: { color:  theme.primaryBg },
   },
   text: {
     container: {},
-    text: { color: '#2196F3' },
+    text: { color: theme.primaryBg  },
   },
   elevated: {
-    container: { backgroundColor: '#2196F3', elevation: 2 },
-    text: { color: '#FFFFFF' },
+    container: { backgroundColor:theme.primaryBg , elevation: 2 },
+    text: { color: theme.primaryText},
   },
   containedTonal: {
     container: { backgroundColor: '#4CAF50' },
@@ -46,8 +47,8 @@ const modes = {
 const styles = StyleSheet.create({
   button: {
     borderRadius: 7,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingVertical: 13,
+    paddingHorizontal: 5,
     minWidth: 100,
     alignItems: 'center',
   },

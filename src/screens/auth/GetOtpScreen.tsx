@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import TextUi from '../../lib/ui/TextUi'
 
 const GetOtpScreen = () => {
   return (
     <View>
-      <Text>GetOtpScreen</Text>
+      <TextUi>Get Otp</TextUi>
     </View>
   )
 }

@@ -39,19 +39,24 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    padding: 8,
-    color:"black",
-    fontSize:17,
+    padding: 12,
+    color: "black",
+    fontSize: 17,
+    backgroundColor: '#E5E7EB',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#00000020',
   },
   icon: {
     width: 24,
     height: 24,
     marginHorizontal: 8,
+
   },
   outlinedContainer: {
-    borderWidth: 1,
-    borderColor: '#2196F3',
-    borderRadius: 4,
+    // borderWidth: 1,
+    // borderColor: '#2196F3',
+    // borderRadius: 4,
   },
   flatContainer: {
     borderBottomWidth: 1,
