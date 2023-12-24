@@ -1,8 +1,8 @@
-import { StyleSheet, Text, TextStyle, View } from 'react-native'
+import { StyleSheet, Text, TextProps, TextStyle, View } from 'react-native'
 import React from 'react'
 
-interface TextUiProps {
-  mode?: 'default' | 'h1' | 'h2' | 'p1' | 'p2' | 'sm1' | 'sm2';
+interface TextUiProps extends TextProps {
+  mode?: 'default' | 'h1' | 'h2' | 'p1' | 'p2' | 'p3' | 'sm1' | 'sm2';
   children: any;
   style?: any;
 }
@@ -29,6 +29,10 @@ const modes = {
     fontSize: 20
   },
   p2: {
+    fontWeight: "500",
+    fontSize: 17,
+  },
+  p3: {
     fontWeight: "400",
     fontSize: 17
   },

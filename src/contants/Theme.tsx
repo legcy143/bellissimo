@@ -1,6 +1,6 @@
 export const theme = {
-    primaryBg:"green",
-    primaryLightBg:"green",
-    primaryText:"white",
-    secondryText:"black",
+    primaryColor:"green",
+    primaryLightColor:"green",
+    primaryText:"black",
+    secondryText:"white",
 }

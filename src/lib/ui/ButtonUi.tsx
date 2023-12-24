@@ -23,20 +23,20 @@ const ButtonUi: React.FC<ButtonUiProps> = ({ label, mode = 'contained', ButtonSt
 
 const modes = {
   contained: {
-    container: { backgroundColor: theme.primaryBg },
-    text: { color: theme.primaryText },
+    container: { backgroundColor: theme.primaryColor },
+    text: { color: theme.secondryText },
   },
   outlined: {
-    container: { borderWidth: 1, borderColor: theme.primaryBg },
-    text: { color:  theme.primaryBg },
+    container: {},
+    text: { color: theme.primaryColor },
   },
   text: {
-    container: {},
-    text: { color: theme.primaryBg  },
+    container: { borderColor: "transparent"},
+    text: { color: theme.primaryColor },
   },
   elevated: {
-    container: { backgroundColor:theme.primaryBg , elevation: 2 },
-    text: { color: theme.primaryText},
+    container: { backgroundColor: theme.primaryColor, elevation: 2 },
+    text: { color: theme.secondryText },
   },
   containedTonal: {
     container: { backgroundColor: '#4CAF50' },
@@ -51,6 +51,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     minWidth: 100,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: theme.primaryColor 
   },
   text: {
     fontSize: 17,
