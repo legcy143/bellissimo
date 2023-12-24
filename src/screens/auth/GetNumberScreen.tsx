@@ -14,7 +14,7 @@ const GetNumberScreen = ({ navigation }: any) => {
           navigation.goBack()
         }} />
       </View>
-      <TextUi mode='h2' style={{ fontSize: 30, marginVertical: 10 }}>Enter your mobile number to get otp</TextUi>
+      <TextUi mode='h2' style={{ fontSize: 28, marginVertical: 10 }}>Enter your mobile number to get otp</TextUi>
       <View style={[styles.Inputcontainer]}>
         <TextUi style={styles.label}>Mobile Number</TextUi>
         <TextUi style={styles.number}>+91</TextUi>
@@ -31,13 +31,13 @@ const GetNumberScreen = ({ navigation }: any) => {
         gap: 5,
         flexWrap: "wrap",
       }]}>
-        <TextUi mode="p2" style={{ fontSize: 16 }}>By clicking i accept</TextUi>
+        <TextUi mode="p3" style={{ fontSize: 16 }}>By clicking i accept</TextUi>
         <TouchableOpacity>
           <TextUi mode='p1' style={{ fontSize: 17 }}>
             the terms
           </TextUi>
         </TouchableOpacity>
-        <TextUi mode="p2" style={{ fontSize: 16 }}>and</TextUi>
+        <TextUi mode="p3" style={{ fontSize: 16 }}>and</TextUi>
         <TouchableOpacity>
           <TextUi mode='p1' style={{ fontSize: 17 }}>
             privacy policy
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "black",
     fontSize: 17,
+    marginLeft:3
   }
 })
 

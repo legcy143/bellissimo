@@ -15,7 +15,7 @@ const ButtonUi: React.FC<ButtonUiProps> = ({ label, mode = 'contained', ButtonSt
   const textStyles: TextStyle[] = [styles.text, modes[mode]?.text, textStyle];
 
   return (
-    <TouchableOpacity activeOpacity={0.8} style={containerStyles} {...props}>
+    <TouchableOpacity activeOpacity={0.5} style={containerStyles} {...props}>
       <Text style={textStyles}>{label}</Text>
     </TouchableOpacity>
   );

@@ -9,8 +9,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ButtonUi from '../../../../lib/ui/ButtonUi';
+import { useNavigation } from '@react-navigation/native';
 
 export const Header = ({ headerText, headerIcon }: any) => {
+    const navigation: any = useNavigation();
     return (
         <View style={{ flexDirection: "row", padding: 10, backgroundColor: "#eeeeee" }}>
             <View style={[styles.Inputcontainer, { flex: 1 }]}>
@@ -21,7 +23,23 @@ export const Header = ({ headerText, headerIcon }: any) => {
                     placeholderTextColor={"gray"}
                 />
             </View>
-            <Ionicons style={[styles.leftContent, { borderRightWidth: 0 }]} name={"cart"} size={22} />
+            <TouchableOpacity onPress={() => {
+                navigation.navigate("Cart")
+            }} style={{ position: "relative" }}>
+                <TextUi style={{
+                    position: "absolute",
+                    right: 1,
+                    top: 1,
+                    backgroundColor: "red",
+                    borderRadius: 112,
+                    fontSize: 12,
+                    paddingHorizontal: 5,
+                    paddingVertical: 3,
+                    color: "white",
+                    fontWeight: '500',
+                }}>23</TextUi>
+                <Ionicons style={[styles.leftContent, { borderRightWidth: 0 }]} name={"cart"} size={22} />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -37,6 +55,7 @@ export const AddresHeader = () => {
 }
 
 export const ProductCard = (props: any) => {
+    const navigation: any = useNavigation()
     return (
         <View style={[styles.container, props.style]}>
             <MaterialCommunityIcons
@@ -90,7 +109,10 @@ export const ProductCard = (props: any) => {
                 margin: 0,
                 padding: 0,
                 fontSize: 15,
-            }} label="Add To Cart" />
+            }} label="View Product"
+                onPress={() => {
+                    navigation.navigate("ViewProduct")
+                }} />
         </View>
     );
 };
@@ -190,5 +212,6 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "black",
         fontSize: 17,
+        marginLeft: 6,
     }
 });

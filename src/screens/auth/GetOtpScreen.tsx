@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import TextUi from '../../lib/ui/TextUi'
+import ButtonUi from '../../lib/ui/ButtonUi'
 
-const GetOtpScreen = () => {
+const GetOtpScreen = ({ navigation }) => {
   return (
-    <View>
-      <TextUi>Get Otp</TextUi>
+    <View style={{ padding: 10 }}>
+      <ButtonUi label='verify' onPress={() => {
+        navigation.navigate("BottomNavigation")
+      }} />
     </View>
   )
 }

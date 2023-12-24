@@ -6,7 +6,6 @@ import { Header, ViewMoreOption, ProductCard, SmallSlider, AddresHeader } from '
 import { Products } from '../../../assets/Products';
 
 const HomeScreen = () => {
-    console.log(Products)
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ScrollView  stickyHeaderIndices={[0]}>

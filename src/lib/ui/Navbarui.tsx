@@ -12,10 +12,10 @@ export const TitleNav = ({ style, pagetitle = "group" }: any) => {
                 <FaIcons icon="arrow-left" size={25} onPress={() => {
                     navigation.goBack()
                 }} />
-                <Text style={styles.logo}>{pagetitle}</Text>
+                <Text style={styles.logo} numberOfLines={1}>{pagetitle}</Text>
             </View>
             <View style={[styles.center, { gap: 15 }]}>
-                <FaIcons icon="bell" size={25} />
+                {/* <FaIcons icon="bell" size={25} /> */}
             </View>
         </View>
     )

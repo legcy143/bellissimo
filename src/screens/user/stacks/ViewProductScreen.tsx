@@ -6,19 +6,19 @@ import ImageSlider from '../../../lib/ui/ImageSlider'
 import TextUi from '../../../lib/ui/TextUi'
 import AccordianUi from '../../../lib/ui/AccordianUi'
 import { DeliveryAndService, ProductBaiscDetail } from './component/ViewProductUi'
+import { Products } from '../../../assets/Products'
 
 const ViewProductScreen = ({ navigation }: any) => {
-
     return (
         <View>
-            <TitleNav />
+            <TitleNav pagetitle="Product name goes here"/>
             <ScrollView
                 scrollEventThrottle={16}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
             >
                 <View style={{ paddingBottom: 60 }}>
-                    <ImageSlider />
+                    <ImageSlider imgArr={Products}/>
                     <ProductBaiscDetail />
                     {/* padding container */}
                     <View style={{ padding: 10 }}>
