@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
+import { theme } from '../../contants/Theme';
 
 const { width } = Dimensions.get('window');
 
@@ -105,14 +106,17 @@ const styles = StyleSheet.create({
         height: 10,
         width: 10,
         borderRadius: 5,
-        backgroundColor: '#00000044',
+        backgroundColor: '#00000000',
+        borderWidth: 1,
+        // borderColor: theme.gray,
+        borderColor:"#00000050",
         marginHorizontal: 5,
     },
     activeIndicator: {
         height: 10,
         width: 10,
         borderRadius: 5,
-        backgroundColor: '#fff',
+        backgroundColor: "#00000050",
         marginHorizontal: 5,
     },
 });

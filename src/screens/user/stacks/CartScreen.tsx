@@ -7,36 +7,42 @@ import ButtonUi from '../../../lib/ui/ButtonUi'
 
 const CartScreen = () => {
     return (
-        <ScrollView>
-            <View style={{
-                position:"relative"
+        <View>
+            <ScrollView contentContainerStyle={{
+                height: "auto"
             }}>
-                <TitleNav pagetitle="My Cart" />
                 <View style={{
                     backgroundColor: "white",
                     padding: 15,
                     flexDirection: "row",
                     alignItems: "center",
-                    gap: 5
+                    gap: 5,
+                    marginVertical: 5,
+
                 }}>
                     <View style={{ flex: 1 }}>
-                        <TextUi mode='p3' numberOfLines={1}>delever to : <TextUi mode='p2'>rahul sign 43,33</TextUi></TextUi>
-                        <TextUi mode="sm2" numberOfLines={1}>punjab chaddigarg mumbai wankhede stadium</TextUi>
+                        <TextUi mode='p3' numberOfLines={1} style={{
+                            fontSize: 15,
+                            textTransform: "capitalize"
+                        }}>deliver to : <TextUi mode='p2' style={{
+                            fontSize: 16
+                        }}>rahul sign 43,33</TextUi></TextUi>
+                        <TextUi mode="p3" numberOfLines={1} style={{
+                            textTransform: "capitalize",
+                            opacity: 0.7, fontSize: 15
+                        }}>punjab chaddigarg mumbai wankhede stadium</TextUi>
                     </View>
                     <ButtonUi label='change' mode='outlined' ButtonStyle={{ paddingVertical: 7 }} textStyle={{ fontSize: 14 }} />
                 </View>
                 <View style={{
-                    padding: 5,
                     gap: 5,
+                    marginBottom: 5,
                 }}>
-                    <CartItemCard />
-                    <CartItemCard />
-                    <CartItemCard />
                     <CartItemCard />
                 </View>
                 <PlaceOrderCart />
-            </View>
-        </ScrollView>
+            </ScrollView >
+        </View>
     )
 }
 

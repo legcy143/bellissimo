@@ -7,11 +7,11 @@ import ButtonUi from '../../../../lib/ui/ButtonUi';
 export const CartItemCard = () => {
     return (
         <View style={{
-            borderWidth: 1,
-            borderColor: "#11111130",
-            borderRadius: 10,
+            // borderWidth: 1,
+            // borderColor: "#11111130",
+            // borderRadius: 10,
             overflow: "hidden",
-            backgroundColor:"white"
+            backgroundColor: "white"
         }}>
             <View
                 style={{
@@ -45,18 +45,23 @@ export const CartItemCard = () => {
                 <View style={{ flex: 1, gap: 2 }}>
                     <TextUi mode='p3' >BELLISSIOMO ULTRA FINE </TextUi>
                     <TextUi mode='sm2' numberOfLines={1}> Premium Sanitary Pads,280mm. *Extra Large*</TextUi>
-                    <TextUi style={{
-                        marginVertical: 10
+                    <View style={{
+                        marginVertical: 10,
+                        flexDirection:"row",
+                        gap:2,
                     }}>
                         {[1, 2, 3, 4].map(e => {
-                            return <Ionicons name="star" size={20} color="black" key={e} />;
+                            return <Ionicons name="star" size={17} color="black" key={e} />;
                         })}
-                    </TextUi>
+                        <TextUi>(23)</TextUi>
+                    </View>
                     <View style={{ flexDirection: 'row', gap: 10, alignItems: "center" }}>
                         <TextUi mode='p1'>$45</TextUi>
-                        <TextUi mode='p2' style={{
-                            textDecorationLine: 'line-through'
-                        }}>$30</TextUi>
+                        <TextUi mode='p2'
+                            style={{
+                                textDecorationLine: 'line-through'
+                            }}
+                        >$30</TextUi>
                         <TextUi mode='p2' style={{
                             color: "green"
                         }}>30% off</TextUi>
@@ -69,7 +74,9 @@ export const CartItemCard = () => {
                 margin: 10,
                 marginTop: 0,
             }}>Deliver by wed dec 2</TextUi>
-            <View style={{ flexDirection: "row", backgroundColor: "#00000010" }}>
+            <View style={{
+                flexDirection: "row",
+            }}>
                 <ButtonUi label='remove' mode='outlined' ButtonStyle={[styles.cartBtn]} />
                 <ButtonUi label='buy this now' ButtonStyle={styles.cartBtn} />
             </View>
@@ -84,7 +91,7 @@ export const PlaceOrderCart = () => {
             backgroundColor: 'white',
             // paddingBottom: 100
         }}>
-            <TextUi mode="p1" style={{ margin: 10 }}>
+            <TextUi mode="p1" style={{ margin: 10, marginBottom: 0 }}>
                 Price Details
             </TextUi>
             <View
@@ -121,12 +128,12 @@ export const PlaceOrderCart = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: "center",
-                padding: 3,
+                padding: 10,
                 backgroundColor: "white",
                 // position: "absolute",
                 bottom: 0,
             }}>
-                <View style={{ padding: 10, flex: 1 }}>
+                <View style={{ padding: 0, flex: 1 }}>
                     <TextUi mode='sm2'>
                         You save 250 on this order
                         {/* <TextUi mode='p3' style={{textDecorationLine: 'line-through'}}>14,279</TextUi> */}
@@ -145,7 +152,8 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         flex: 1,
         borderRadius: 0,
-        borderColor: "#00000000",
+        borderColor: "#000000",
         borderWidth: 0,
+        borderTopWidth: 1,
     }
 });

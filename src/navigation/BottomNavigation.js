@@ -9,7 +9,8 @@ const Tab = createBottomTabNavigator();
 
 export function BottomNavigation() {
 
-    const screenOptions = (icon, label) => ({
+    const screenOptions = (icon, label , isHeaderShown = false) => ({
+        headerShown:isHeaderShown,
         tabBarLabel: label,
         tabBarIcon: ({ color }) => <MaterialCommunityIcons name={icon} color={color} size={25} />
     });
@@ -20,8 +21,8 @@ export function BottomNavigation() {
             tabBarActiveTintColor: theme.primaryColor,
         }}>
             <Tab.Screen name="Home" component={HomeScreen} options={screenOptions("home")} />
-            <Tab.Screen name="Explore" component={ExploreScreen} options={screenOptions("home")} />
-            <Tab.Screen name="Profile" component={ProfileScreen} options={screenOptions("account")} />
+            <Tab.Screen name="Explore" component={ExploreScreen} options={screenOptions("view-dashboard")} />
+            <Tab.Screen name="Profile" component={ProfileScreen} options={screenOptions("account" , "profile" , true)} />
         </Tab.Navigator>
     );
 }

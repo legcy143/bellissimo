@@ -7,14 +7,14 @@ import { FaIcons } from '../../lib/ui/IconsUi'
 const GetNumberScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <View style={{
+      {/* <View style={{
         paddingVertical: 10
       }}>
         <FaIcons icon="arrow-left" onPress={() => {
           navigation.goBack()
         }} />
-      </View>
-      <TextUi mode='h2' style={{ fontSize: 28, marginVertical: 10 }}>Enter your mobile number to get otp</TextUi>
+      </View> */}
+      <TextUi mode='h2' style={{ fontSize: 27, marginVertical: 10 , textTransform:"capitalize" }}>Enter your mobile number to get otp</TextUi>
       <View style={[styles.Inputcontainer]}>
         <TextUi style={styles.label}>Mobile Number</TextUi>
         <TextUi style={styles.number}>+91</TextUi>
@@ -24,22 +24,23 @@ const GetNumberScreen = ({ navigation }: any) => {
           placeholderTextColor={"gray"}
         />
       </View>
-      <ButtonUi label='Get Otp' onPress={() => {
+      <ButtonUi label='Get OTP' onPress={() => {
           navigation.navigate("GetOtp")
         }} />
       <View style={[styles.center, {
         gap: 5,
         flexWrap: "wrap",
+        marginTop:"auto"
       }]}>
-        <TextUi mode="p3" style={{ fontSize: 16 }}>By clicking i accept</TextUi>
+        <TextUi mode="p3" style={{ fontSize: 14 }}>By clicking i accept</TextUi>
         <TouchableOpacity>
-          <TextUi mode='p1' style={{ fontSize: 17 }}>
+          <TextUi mode='p1' style={{ fontSize: 15 }}>
             the terms
           </TextUi>
         </TouchableOpacity>
-        <TextUi mode="p3" style={{ fontSize: 16 }}>and</TextUi>
+        <TextUi mode="p3" style={{ fontSize: 14 }}>and</TextUi>
         <TouchableOpacity>
-          <TextUi mode='p1' style={{ fontSize: 17 }}>
+          <TextUi mode='p1' style={{ fontSize: 15 }}>
             privacy policy
           </TextUi>
         </TouchableOpacity>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#00000020',
+    borderColor: 'gray',
     borderRadius: 10,
     padding: 2,
     // backgroundColor: '#E5E7EB',
@@ -78,7 +79,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    padding: 7,
+    padding: 1,
+    paddingHorizontal:10,
     fontSize: 17,
     fontWeight: "500",
     borderRightWidth: 2,
@@ -87,10 +89,11 @@ const styles = StyleSheet.create({
   },
   label: {
     top: -15,
-    left: 45,
+    left: 15,
     position: "absolute",
     backgroundColor: "white",
     padding: 5,
+    paddingLeft:7,
     fontSize: 14,
     color: "gray"
     // display: "none"

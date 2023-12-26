@@ -8,37 +8,52 @@ import { Image } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import ButtonUi from '../../../../lib/ui/ButtonUi';
 import { useNavigation } from '@react-navigation/native';
+import { theme } from '../../../../contants/Theme';
 
 export const Header = ({ headerText, headerIcon }: any) => {
     const navigation: any = useNavigation();
     return (
-        <View style={{ flexDirection: "row", padding: 10, backgroundColor: "#eeeeee" }}>
-            <View style={[styles.Inputcontainer, { flex: 1 }]}>
-                <Ionicons style={styles.leftContent} name={"search"} size={22} />
+        <View style={[styles.center, { padding: 15, backgroundColor: "#fff", gap: 3 }]}>
+            <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                borderWidth: 1,
+                borderColor: '#00000020',
+                borderRadius: 10,
+                backgroundColor: theme.gray,
+                position: "relative",
+                flex: 1,
+            }}>
+                <Ionicons style={styles.leftContent} name={"search"} size={32} />
                 <TextInput
                     style={[styles.input]}
                     placeholder='Search Product'
                     placeholderTextColor={"gray"}
                 />
             </View>
-            <TouchableOpacity onPress={() => {
-                navigation.navigate("Cart")
-            }} style={{ position: "relative" }}>
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate("Cart")
+                }}
+                style={{
+                    position: "relative",
+                }}>
+                <Ionicons style={[styles.center, { fontSize: 35, padding: 5, color: theme.primaryText }]} name={"cart"} size={32} />
                 <TextUi style={{
                     position: "absolute",
-                    right: 1,
-                    top: 1,
+                    right: 2,
+                    top: -2,
                     backgroundColor: "red",
                     borderRadius: 112,
-                    fontSize: 12,
-                    paddingHorizontal: 5,
-                    paddingVertical: 3,
+                    fontSize: 10,
+                    paddingHorizontal: 4,
+                    paddingVertical: 2.5,
                     color: "white",
                     fontWeight: '500',
                 }}>23</TextUi>
-                <Ionicons style={[styles.leftContent, { borderRightWidth: 0 }]} name={"cart"} size={22} />
             </TouchableOpacity>
         </View>
     );
@@ -46,10 +61,10 @@ export const Header = ({ headerText, headerIcon }: any) => {
 
 export const AddresHeader = () => {
     return (
-        <View style={[styles.center]}>
-            <Ionicons style={[styles.leftContent, { borderRightWidth: 0 }]} name={"location"} />
-            <TextUi mode='sm1'>india , punjab - 232322</TextUi>
-            {/* <Ionicons style={[styles.leftContent, { borderRightWidth: 0  }]} name={"triangle"} /> */}
+        <View style={[styles.center, { paddingHorizontal: 15, gap: 5 }]}>
+            <Ionicons name={"location"} size={22} color={theme.primaryText} />
+            <TextUi mode='p3' style={{ fontSize: 15 }}>Deliver to bhopal - 844444</TextUi>
+            <MaterialIcons name="arrow-drop-down" size={22} color='gray' />
         </View>
     )
 }
@@ -57,7 +72,18 @@ export const AddresHeader = () => {
 export const ProductCard = (props: any) => {
     const navigation: any = useNavigation()
     return (
-        <View style={[styles.container, props.style]}>
+        <View style={[{
+            position: 'relative',
+            borderRadius: 10,
+            padding: 10,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 20,
+            width: "100%",
+            flex: 1,
+            borderWidth: 1,
+            borderColor: theme.gray,
+        }, props.style]}>
             <MaterialCommunityIcons
                 style={{ position: 'absolute', top: 5, right: 6 }}
                 name="heart-outline"
@@ -69,10 +95,10 @@ export const ProductCard = (props: any) => {
                 style={styles.productImage}
                 resizeMode="contain"
             />
-            {/* <Textui mode='p1' style={{
-  
-        }}>hii</Textui> */}
-            <TextUi numberOfLines={2} mode="sm1" style={{ fontSize: 12 }}>
+            <TextUi numberOfLines={2} mode="p2" style={{
+                fontSize: 14,
+                width: "100%",
+            }}>
                 BELLISSIMO ULTRA FINE Premimum+Sanitary Pads, 280mm. *Extra Paids,
                 280mm.*Extra Large*
             </TextUi>
@@ -123,7 +149,7 @@ export const SmallSlider = (props: any) => {
         <View
             style={{
                 height: 38,
-                backgroundColor: '#D4D5CD',
+                backgroundColor: theme.gray,
                 padding: 9,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -145,15 +171,21 @@ export const SmallSlider = (props: any) => {
 
 export const ViewMoreOption = () => {
     return (
-        <SafeAreaView style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', gap: 5 }}>
-            <View style={{ marginLeft: -15, padding: 5, marginTop: 20, }}>
-                <Text style={{ fontSize: 20, color: 'black', fontWeight: '600', textTransform: 'capitalize' }}>
-                    price slash alert
-                </Text>
-            </View>
-            <View style={{ padding: 5, marginTop: 20, flexDirection: 'row', gap: 18 }}>
-                <Text style={{ fontSize: 15, color: 'black', fontWeight: '200', }}>View All</Text>
-                <AntDesign icon name="rightcircleo" size={22} color='gray' />
+        <SafeAreaView style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: "center",
+            gap: 5,
+            padding: 20,
+            paddingBottom: 5,
+        }}>
+            <Text style={{ fontSize: 20, color: 'black', fontWeight: '600', textTransform: 'capitalize' }}>
+                price slash alert
+            </Text>
+            <View style={[styles.center, { gap: 10 }]}>
+                {/* <Text style={{ fontSize: 15, color: 'black', fontWeight: '400', }}>View All</Text> */}
+                <AntDesign name="rightcircleo" size={18} color='gray' />
             </View>
         </SafeAreaView>
     );
@@ -164,47 +196,20 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
-    container: {
-        position: 'relative',
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 20,
-        width: "100%",
-        flex: 1,
-        // height: 290,
-    },
     productImage: {
         width: "80%",
         height: 100,
         borderRadius: 10,
         marginVertical: 10,
     },
-    Inputcontainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        borderWidth: 1,
-        borderColor: '#00000020',
-        borderRadius: 10,
-        padding: 1,
-        // backgroundColor: '#E5E7EB',
-        position: "relative",
-    },
     leftContent: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        padding: 10,
-        fontSize: 25,
+        paddingHorizontal: 10,
+        fontSize: 22,
         fontWeight: "500",
-        borderRightWidth: 2,
+        // borderRightWidth: 2,
         borderColor: '#00000020',
         color: "#00000090"
     },
@@ -212,6 +217,6 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "black",
         fontSize: 17,
-        marginLeft: 6,
+        marginLeft: 0,
     }
 });

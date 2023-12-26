@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ImageSlider from '../../../lib/ui/ImageSlider';
@@ -6,46 +6,59 @@ import { Header, ViewMoreOption, ProductCard, SmallSlider, AddresHeader } from '
 import { Products } from '../../../assets/Products';
 
 const HomeScreen = () => {
+    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
     return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <ScrollView  stickyHeaderIndices={[0]}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+            <ScrollView stickyHeaderIndices={[0]}>
                 <Header />
                 <AddresHeader />
-                <ImageSlider imgArr={Products}/>
+                <ImageSlider imgArr={Products} />
                 <ScrollView
-                    style={{ height: 40 }}
                     horizontal={true}
-                    showsHorizontalScrollIndicator={false}>
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={{
+                        height: 40 ,
+                        paddingHorizontal:10,
+                    }}
+                    >
                     <SmallSlider message={'price slash alert'} />
                     <SmallSlider message={'To deals'} />
                     <SmallSlider message={'trending in market'} />
                     <SmallSlider message={'welfare'} />
                 </ScrollView>
-                <ViewMoreOption />
-                <View style={[styles.center, { gap: 10 }]}>
-                    <ProductCard style={{
-                        width: "45%",
-                        flex:0,
-                    }} />
-                    <ProductCard style={{
-                        width: "45%",
-                        flex:0,
-                    }} />
-                    <ProductCard style={{
-                        width: "45%",
-                        flex:0,
-                    }} />
-                    <ProductCard style={{
-                        width: "45%",
-                        flex:0,
-                    }} />
-                </View>
+                <ShowProduct data={data} />
             </ScrollView>
         </SafeAreaView>
     );
 };
 
 export default HomeScreen;
+
+const ShowProduct = ({ data = [] }: any) => {
+    return (
+        <View >
+            <ViewMoreOption />
+            <ScrollView
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                horizontal
+                contentContainerStyle={{
+                    paddingHorizontal:15,
+                    paddingVertical:10,
+                    gap: 10
+                }}
+            >
+                {data.map(e => (
+                    <ProductCard key={e} style={{
+                        width: 230,
+                        flex: 0,
+                    }} />
+                ))}
+            </ScrollView>
+        </View>
+    )
+}
 
 const styles = StyleSheet.create({
     center: {

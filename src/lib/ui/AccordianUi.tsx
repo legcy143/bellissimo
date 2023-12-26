@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
 import {
     LayoutAnimation,
     Platform,
@@ -18,7 +18,7 @@ if (Platform.OS === 'android') {
     }
 }
 
-export default function AccordianUi({ i }: any) {
+export default function AccordianUi({ title, val = "", children }: any) {
     const [open, setopen] = useState(false);
     const onPress = () => {
         LayoutAnimation.easeInEaseOut();
@@ -27,15 +27,21 @@ export default function AccordianUi({ i }: any) {
     return (
         <TouchableOpacity style={styles.item} onPress={onPress} activeOpacity={1}>
             <View style={styles.row}>
-                <TextUi mode='p1' style={styles.heading}>Header - {i + 1}</TextUi>
+                <TextUi mode='p2' style={styles.heading}>
+                    <TextUi style={{
+                        fontWeight: "500",
+                        textTransform: "capitalize",
+                        color: "#00000080"
+                    }}>{title}</TextUi>
+                    {val}
+                </TextUi>
                 <TextUi>{open ? 'close' : 'open'}</TextUi>
             </View>
             {open &&
-                [1, 2, 3, 4, 5].map(x => (
-                    <TextUi key={x} style={styles.subItem}>
-                        - SOME DATA
-                    </TextUi>
-                ))}
+                <>
+                    {children}
+                </>
+            }
         </TouchableOpacity>
     );
 }
@@ -43,19 +49,16 @@ export default function AccordianUi({ i }: any) {
 const styles = StyleSheet.create({
     item: {
         width: '100%',
-        borderWidth: 1.3,
-        borderColor: `gray`,
+        borderWidth: 2,
+        borderColor: '#00000020',
         borderRadius: 7,
-        paddingHorizontal: 20,
         overflow: 'hidden',
+        paddingHorizontal: 20,
         paddingVertical: 10,
         marginBottom: 5,
     },
     heading: {
         fontSize: 17,
-    },
-    subItem: {
-        padding: 5,
     },
     row: {
         flexDirection: 'row',
