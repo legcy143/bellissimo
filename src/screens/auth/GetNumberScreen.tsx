@@ -3,6 +3,7 @@ import React from 'react'
 import ButtonUi from '../../lib/ui/ButtonUi'
 import TextUi from '../../lib/ui/TextUi'
 import { FaIcons } from '../../lib/ui/IconsUi'
+import Toast from 'react-native-toast-message';
 
 const GetNumberScreen = ({ navigation }: any) => {
   return (
@@ -14,7 +15,7 @@ const GetNumberScreen = ({ navigation }: any) => {
           navigation.goBack()
         }} />
       </View> */}
-      <TextUi mode='h2' style={{ fontSize: 27, marginVertical: 10 , textTransform:"capitalize" }}>Enter your mobile number to get otp</TextUi>
+      <TextUi mode='h2' style={{ fontSize: 27, marginVertical: 10, textTransform: "capitalize" }}>Enter your mobile number to get otp</TextUi>
       <View style={[styles.Inputcontainer]}>
         <TextUi style={styles.label}>Mobile Number</TextUi>
         <TextUi style={styles.number}>+91</TextUi>
@@ -25,12 +26,12 @@ const GetNumberScreen = ({ navigation }: any) => {
         />
       </View>
       <ButtonUi label='Get OTP' onPress={() => {
-          navigation.navigate("GetOtp")
-        }} />
+        navigation.navigate("GetOtp")
+      }} />
       <View style={[styles.center, {
         gap: 5,
         flexWrap: "wrap",
-        marginTop:"auto"
+        marginTop: "auto"
       }]}>
         <TextUi mode="p3" style={{ fontSize: 14 }}>By clicking i accept</TextUi>
         <TouchableOpacity>
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 1,
-    paddingHorizontal:10,
+    paddingHorizontal: 10,
     fontSize: 17,
     fontWeight: "500",
     borderRightWidth: 2,
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: "white",
     padding: 5,
-    paddingLeft:7,
+    paddingLeft: 7,
     fontSize: 14,
     color: "gray"
     // display: "none"
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "black",
     fontSize: 17,
-    marginLeft:3
+    marginLeft: 3
   }
 })
 

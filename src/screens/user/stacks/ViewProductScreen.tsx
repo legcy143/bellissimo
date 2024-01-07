@@ -38,9 +38,7 @@ const ViewProductScreen = ({ navigation }: any) => {
             }
             ]}>
                 <ButtonUi ButtonStyle={styles.cartBtn} mode='outlined' label='Add to cart' />
-                <ButtonUi ButtonStyle={styles.cartBtn} label='Buy now' onPress={() => navigation.navigate("BottomNavigation", {
-                    screen: "Profile"
-                })} />
+                <ButtonUi ButtonStyle={styles.cartBtn} label='Buy now' onPress={() => navigation.navigate("PlaceOrder")} />
             </View>
         </View>
     )

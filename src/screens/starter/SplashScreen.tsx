@@ -7,7 +7,7 @@ import BgAuth from '../auth/component/BgAuth'
 const SplashScreen = ({ navigation }: any) => {
     useEffect(() => {
         const interval = setTimeout(() => {
-            navigation.navigate("GetNumber")
+            navigation.replace("GetNumber")
         }, 1000);
         return () => {
             clearInterval(interval)
